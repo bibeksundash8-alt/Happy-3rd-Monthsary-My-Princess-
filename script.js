@@ -70,3 +70,17 @@ setInterval(
   800
 );
 
+// PLAY MUSIC ALWAYS
+window.addEventListener("click", () => {
+  const bgMusic = document.getElementById("bgMusic");
+  if (bgMusic) {
+    bgMusic.play().catch(() => {
+      bgMusic.muted = true;
+      bgMusic.play();
+      setTimeout(() => {
+        bgMusic.muted = false;
+      }, 500);
+    });
+  }
+});
+
